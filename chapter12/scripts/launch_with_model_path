@@ -1,0 +1,4 @@
+#!/usr/bin/bash
+
+export GAZEBO_RESOURCE_PATH=$(rospack find chapter12)/
+roslaunch chapter12 course.launch

@@ -1,0 +1,134 @@
+<?xml version="1.0"?>
+<robot name="cougarbot">
+  <link name="world"/>
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <cylinder length="0.05" radius="0.1"/>
+      </geometry>
+      <material name="silver">
+        <color rgba="0.75 0.75 0.75 1"/>
+      </material>
+      <origin rpy="0 0 0" xyz="0 0 0.025"/>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.05" radius="0.1"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.025"/>
+    </collision>
+    <inertial>
+      <mass value="1.0"/>
+      <origin rpy="0 0 0" xyz="0 0 0.025"/>
+      <inertia ixx="0.0027" iyy="0.0027" izz="0.005" ixy="0" ixz="0" iyz="0"/>
+    </inertial>
+  </link>
+  <link name="torso">
+    <visual>
+      <geometry>
+        <cylinder length="0.5" radius="0.05"/>
+      </geometry>
+      <material name="silver"/>
+      <origin rpy="0 0 0" xyz="0 0 0.25"/>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.5" radius="0.05"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.25"/>
+    </collision>
+    <inertial>
+      <mass value="1.0"/>
+      <origin rpy="0 0 0" xyz="0 0 0.25"/>
+      <inertia ixx="0.02146" iyy="0.02146" izz="0.00125" ixy="0" ixz="0" iyz="0"/>
+    </inertial>
+  </link>
+  <link name="upper_arm">
+    <visual>
+      <geometry>
+        <cylinder length="0.4" radius="0.05"/>
+      </geometry>
+      <material name="silver"/>
+      <origin rpy="0 0 0" xyz="0 0 0.2"/>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.4" radius="0.05"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.2"/>
+    </collision>
+    <inertial>
+      <mass value="1.0"/>
+      <origin rpy="0 0 0" xyz="0 0 0.2"/>
+      <inertia ixx="0.01396" iyy="0.01396" izz="0.00125" ixy="0" ixz="0" iyz="0"/>
+    </inertial>
+  </link>
+  <link name="lower_arm">
+    <visual>
+      <geometry>
+        <cylinder length="0.4" radius="0.05"/>
+      </geometry>
+      <material name="silver"/>
+      <origin rpy="0 0 0" xyz="0 0 0.2"/>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.4" radius="0.05"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.2"/>
+    </collision>
+    <inertial>
+      <mass value="1.0"/>
+      <origin rpy="0 0 0" xyz="0 0 0.2"/>
+      <inertia ixx="0.01396" iyy="0.01396" izz="0.00125" ixy="0" ixz="0" iyz="0"/>
+    </inertial>
+  </link>
+  <link name="hand">
+    <visual>
+      <geometry>
+        <box size="0.05 0.05 0.05"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.05 0.05 0.05"/>
+      </geometry>
+    </collision>
+    <!-- Added code begins -->
+    <inertial>
+      <mass value="1.0"/>
+      <inertia ixx="0.00042" iyy="0.00042" izz="0.00042" ixy="0" ixz="0" iyz="0"/>
+    </inertial>
+    <!-- Added code ends -->
+  </link>
+
+  <joint name="fixed" type="fixed">
+    <parent link="world"/>
+    <child link="base_link"/>
+  </joint>
+  <joint name="hip" type="continuous">
+    <axis xyz="0 0 1"/>
+    <parent link="base_link"/>
+    <child link="torso"/>
+    <origin rpy="0 0 0" xyz="0 0 0.05"/>
+  </joint>
+  <joint name="shoulder" type="continuous">
+    <axis xyz="0 1 0"/>
+    <parent link="torso"/>
+    <child link="upper_arm"/>
+    <origin rpy="0 1.5708 0" xyz="0 -0.1 0.45"/>
+  </joint>
+  <joint name="elbow" type="continuous">
+    <axis xyz="0 1 0"/>
+    <parent link="upper_arm"/>
+    <child link="lower_arm"/>
+    <origin rpy="0 0 0" xyz="0 0.1 0.35"/>
+  </joint>
+  <joint name="wrist" type="continuous">
+    <axis xyz="0 1 0"/>
+    <parent link="lower_arm"/>
+    <child link="hand"/>
+    <origin rpy="0 0 0" xyz="0 0 0.425"/>
+  </joint>
+</robot>

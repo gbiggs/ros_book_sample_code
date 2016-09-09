@@ -1,0 +1,3 @@
+#!/usr/bin/bash
+
+export GAZEBO_RESOURCE_PATH=$(rospack find chapter14)/

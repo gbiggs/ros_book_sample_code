@@ -1,0 +1,31 @@
+<launch>
+  <!-- Load the TortoiseBot URDF model into the parameter server -->
+  <param name="robot_description"
+         textfile="$(find chapter17)/urdf/tortoisebot.urdf"/>
+  <!-- Start Gazebo with the Willow Garage office world -->
+  <include file="$(find gazebo_ros)/launch/willowgarage_world.launch"/>
+  <!-- Spawn a TortoiseBot in Gazebo, taking the description from the parameter
+       server -->
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model"
+        args="-param robot_description -urdf -model tortoisebot -x 8 -y -8"/>
+  <!-- Start a robot state publisher -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher"
+        type="robot_state_publisher"/>
+  <!-- Provide a static map of the Willow Garage office -->
+  <node name="map_server" pkg="map_server" type="map_server"
+        args="$(find chapter17)/maps/willow.yaml"/>
+  <include file="$(find amcl)/examples/amcl_diff.launch"/>
+  <node pkg="move_base" type="move_base" respawn="false" name="move_base"
+        output="screen">
+    <rosparam file="$(find chapter17)/params/costmap_common_params.yaml"
+              command="load" ns="global_costmap"/>
+    <rosparam file="$(find chapter17)/params/costmap_common_params.yaml"
+              command="load" ns="local_costmap"/>
+    <rosparam file="$(find chapter17)/params/local_costmap_params.yaml"
+              command="load"/>
+    <rosparam file="$(find chapter17)/params/global_costmap_params.yaml"
+              command="load"/>
+    <rosparam file="$(find chapter17)/params/base_local_planner_params.yaml"
+              command="load"/>
+  </node>
+</launch>

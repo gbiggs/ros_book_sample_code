@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<robot name="tortoisebot">
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <box size="0.6 0.3 0.3"/>
+      </geometry>
+      <material name="silver">
+        <color rgba="0.75 0.75 0.75 1"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Added code begins-->
+  <link name="front_caster">
+    <visual>
+      <geometry>
+        <box size="0.1 0.1 0.3"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+  </link>
+
+  <joint name="front_caster_joint" type="continuous">
+    <axis xyz="0 0 1"/>
+    <parent link="base_link"/>
+    <child link="front_caster"/>
+    <origin rpy="0 0 0" xyz="0.3 0 0"/>
+  </joint>
+  <!-- Added code ends-->
+</robot>

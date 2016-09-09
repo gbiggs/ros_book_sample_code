@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<robot name="tortoisebot">
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <box size="0.6 0.3 0.3"/>
+      </geometry>
+      <material name="silver">
+        <color rgba="0.75 0.75 0.75 1"/>
+      </material>
+    </visual>
+  </link>
+  <link name="front_caster">
+    <visual>
+      <geometry>
+        <box size="0.1 0.1 0.3"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+  </link>
+  <!-- Added code begins-->
+  <link name="front_wheel">
+    <visual>
+      <geometry>
+        <cylinder length="0.05" radius="0.035"/>
+      </geometry>
+      <material name="black">
+        <color rgba="0 0 0 1"/>
+      </material>
+    </visual>
+  <!-- Added code ends-->
+  </link>
+
+  <joint name="front_caster_joint" type="continuous">
+    <axis xyz="0 0 1"/>
+    <parent link="base_link"/>
+    <child link="front_caster"/>
+    <origin rpy="0 0 0" xyz="0.3 0 0"/>
+  </joint>
+  <!-- Added code begins-->
+  <joint name="front_wheel_joint" type="continuous">
+    <axis xyz="0 0 1"/>
+    <parent link="front_caster"/>
+    <child link="front_wheel"/>
+    <origin rpy="-1.5708 0 0" xyz="0.05 0 -0.15"/>
+  </joint>
+  <!-- Added code ends-->
+</robot>

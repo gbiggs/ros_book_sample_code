@@ -1,0 +1,14 @@
+<launch>
+  <!-- Load the TortoiseBot URDF model into the parameter server -->
+  <param name="robot_description"
+         textfile="$(find chapter17)/urdf/example_17_3.urdf"/>
+  <!-- Start Gazebo with an empty world -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch"/>
+  <!-- Start the robot state publisher -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher"
+        type="robot_state_publisher"/>
+  <!-- Spawn a TortoiseBot in Gazebo, taking the description from the parameter
+       server -->
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model"
+        args="-param robot_description -urdf -model tortoisebot"/>
+</launch>

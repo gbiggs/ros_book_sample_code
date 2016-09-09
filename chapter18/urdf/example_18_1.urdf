@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<robot name="cougarbot">
+  <link name="world"/>
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <cylinder length="0.05" radius="0.1"/>
+      </geometry>
+      <material name="silver">
+        <color rgba="0.75 0.75 0.75 1"/>
+      </material>
+      <origin rpy="0 0 0" xyz="0 0 0.025"/>
+    </visual>
+  </link>
+
+  <joint name="fixed" type="fixed">
+    <parent link="world"/>
+    <child link="base_link"/>
+  </joint>
+</robot>
