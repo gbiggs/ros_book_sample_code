@@ -19,4 +19,5 @@ this repository are instead named after the example numbers.
 
 The examples have been tested on Indigo. All examples except for chapters 11
 and 14 (due to lack of required support packages) have also been tested on
-Kinetic.
+Kinetic; chapter 12 currently is buggy in Kinetic - the line does not show up
+in Gazebo.
