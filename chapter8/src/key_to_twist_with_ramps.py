@@ -14,7 +14,7 @@ key_mapping = {'w': [0, 1], 'x': [0, -1],
 g_twist_pub = None
 g_target_twist = None
 g_last_twist = None
-g_last_send_time = None
+g_last_twist_send_time = None
 g_vel_scales = [0.1, 0.1]  # default to very slow
 g_vel_ramps = [1, 1]  # units: meters per second^2
 
@@ -50,7 +50,7 @@ def send_twist():
 
 
 def keys_cb(msg):
-    global g_target_twist, g_last_twist, g_vel_scales
+    global g_target_twist, g_vel_scales
     if len(msg.data) == 0 or not msg.data[0] in key_mapping:
         return  # unknown key
     vels = key_mapping[msg.data[0]]
