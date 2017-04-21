@@ -3,7 +3,7 @@
   <name>chapter17</name>
   <version>1.0.0</version>
   <description>Sample code from chapter 17 of "Programming Robots with ROS", by
-    Quigly, Gerkey and Smart (O'Reilly Media, Inc.)</description>
+    Quigley, Gerkey and Smart (O'Reilly Media, Inc.)</description>
 
   <!-- One maintainer tag required, multiple allowed, one person per tag --> 
   <!-- Example:  -->

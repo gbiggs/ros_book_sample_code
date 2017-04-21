@@ -1,10 +1,10 @@
 # "Programming Robots with ROS sample code"
 
 This repository contains all the examples from the book "Programming Robots
-with ROS", by Morgan Quigly, Brian Gerkey and William D. Smart (O'Reilly Media,
+with ROS", by Morgan Quigley, Brian Gerkey and William D. Smart (O'Reilly Media,
 Inc., 2015).
 
-The code is originally written and copyright by Morgan Quigly, Brian Gerkey and
+The code is originally written and copyright by Morgan Quigley, Brian Gerkey and
 William D. Smart.
 
 The examples have had bug fixes applied, where those bugs have been found.
