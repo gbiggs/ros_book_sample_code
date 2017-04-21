@@ -17,16 +17,22 @@
   <license>Apache License 2.0</license>
 
 
-  <!-- Url tags are optional, but mutiple are allowed, one per tag -->
+  <!-- Url tags are optional, but multiple are allowed, one per tag -->
   <!-- Optional attribute type can be: website, bugtracker, or repository -->
   <!-- Example: -->
   <!-- <url type="website">http://wiki.ros.org/chapter7</url> -->
+  <url type="website">http://shop.oreilly.com/product/0636920024736.do</url>
+  <url type="repository">https://github.com/gbiggs/ros_book_sample_code</url>
+  <url type="repository">https://github.com/osrf/rosbook</url>
 
 
-  <!-- Author tags are optional, mutiple are allowed, one per tag -->
-  <!-- Authors do not have to be maintianers, but could be -->
+  <!-- Author tags are optional, multiple are allowed, one per tag -->
+  <!-- Authors do not have to be maintainers, but could be -->
   <!-- Example: -->
   <!-- <author email="jane.doe@example.com">Jane Doe</author> -->
+  <author>Morgan Quigley</author>
+  <author>Brian Gerkey</author>
+  <author>William D. Smart</author>
 
 
   <!-- The *_depend tags are used to specify dependencies -->
