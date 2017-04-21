@@ -161,11 +161,32 @@ catkin_package(
 # )
 
 ## Mark other files for installation (e.g. launch and bag files, etc.)
-# install(FILES
-#   # myfile1
-#   # myfile2
-#   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
-# )
+install(FILES
+  config/base_local_planner_params.yaml
+  config/costmap_common_params.yaml
+  config/global_costmap_params.yaml
+  config/local_costmap_params.yaml
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/config
+)
+install(FILES
+  launch/after_example_17_1.launch
+  launch/after_example_17_2.launch
+  launch/after_example_17_3.launch
+  launch/tortoisebot.launch
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/launch
+)
+install(FILES
+  maps/willow.pgm
+  maps/willow.yaml
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/maps
+)
+install(FILES
+  urdf/example_17_1.urdf
+  urdf/example_17_2.urdf
+  urdf/example_17_3.urdf
+  urdf/tortoisebot.urdf
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/urdf
+)
 
 #############
 ## Testing ##

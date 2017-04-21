@@ -146,10 +146,14 @@ include_directories(
 
 ## Mark executable scripts (Python etc.) for installation
 ## in contrast to setup.py, you can choose the destination
-# install(PROGRAMS
-#   scripts/my_python_script
-#   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
-# )
+install(PROGRAMS
+  src/key_publisher.py
+  src/key_to_twist_parameterized.py
+  src/key_to_twist.py
+  src/key_to_twist_using_rate.py
+  src/key_to_twist_with_ramps.py
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
 
 ## Mark executables and/or libraries for installation
 # install(TARGETS chapter8 chapter8_node

@@ -146,10 +146,16 @@ include_directories(
 
 ## Mark executable scripts (Python etc.) for installation
 ## in contrast to setup.py, you can choose the destination
-# install(PROGRAMS
-#   scripts/my_python_script
-#   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
-# )
+install(PROGRAMS
+  scripts/deliver_to_counter.py
+  scripts/go_to_bin.py
+  scripts/initial_localization.py
+  scripts/look_at_bin.py
+  scripts/pick_up_item.py
+  scripts/set_gazebo_resource_path
+  scripts/stock_products.py
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
 
 ## Mark executables and/or libraries for installation
 # install(TARGETS chapter14 chapter14_node
@@ -166,11 +172,56 @@ include_directories(
 # )
 
 ## Mark other files for installation (e.g. launch and bag files, etc.)
-# install(FILES
-#   # myfile1
-#   # myfile2
-#   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
-# )
+install(FILES
+  launch/markers.launch
+  launch/moveit.launch
+  launch/nav.launch
+  launch/stockroom.launch
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/launch
+)
+install(FILES
+  maps/map.pgm
+  maps/map.yaml
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/maps
+)
+install(FILES
+  models/bin/model.config
+  models/bin/model.sdf
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/models/bin
+)
+install(FILES
+  models/bin/tags/generate_codes_and_materials.py
+  models/bin/tags/MarkerData_0.png
+  models/bin/tags/MarkerData_1.png
+  models/bin/tags/MarkerData_2.png
+  models/bin/tags/MarkerData_3.png
+  models/bin/tags/MarkerData_4.png
+  models/bin/tags/MarkerData_5.png
+  models/bin/tags/MarkerData_6.png
+  models/bin/tags/MarkerData_7.png
+  models/bin/tags/MarkerData_8.png
+  models/bin/tags/MarkerData_9.png
+  models/bin/tags/MarkerData_10.png
+  models/bin/tags/MarkerData_11.png
+  models/bin/tags/product_0.material
+  models/bin/tags/product_1.material
+  models/bin/tags/product_2.material
+  models/bin/tags/product_3.material
+  models/bin/tags/product_4.material
+  models/bin/tags/product_5.material
+  models/bin/tags/product_6.material
+  models/bin/tags/product_7.material
+  models/bin/tags/product_8.material
+  models/bin/tags/product_9.material
+  models/bin/tags/product_10.material
+  models/bin/tags/product_11.material
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/models/bin/tags
+)
+install(FILES
+  worlds/stockroom.world
+  worlds/stockroom.world.em
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/worlds
+)
 
 #############
 ## Testing ##

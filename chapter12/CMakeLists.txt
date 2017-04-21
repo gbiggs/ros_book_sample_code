@@ -146,10 +146,15 @@ include_directories(
 
 ## Mark executable scripts (Python etc.) for installation
 ## in contrast to setup.py, you can choose the destination
-# install(PROGRAMS
-#   scripts/my_python_script
-#   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
-# )
+install(PROGRAMS
+  scripts/launch_with_model_path
+  src/follower_color_filter.py
+  src/follower_line_finder.py
+  src/follower_opencv.py
+  src/follower_p.py
+  src/follower.py
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
 
 ## Mark executables and/or libraries for installation
 # install(TARGETS chapter12 chapter12_node
@@ -166,11 +171,22 @@ include_directories(
 # )
 
 ## Mark other files for installation (e.g. launch and bag files, etc.)
-# install(FILES
-#   # myfile1
-#   # myfile2
-#   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
-# )
+install(FILES
+  images/course.png
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/images
+)
+install(FILES
+  launch/course.launch
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/launch
+)
+install(FILES
+  materials/course.material
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/materials
+)
+install(FILES
+  worlds/course.world
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/worlds
+)
 
 #############
 ## Testing ##

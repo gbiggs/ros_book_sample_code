@@ -161,11 +161,23 @@ catkin_package(
 # )
 
 ## Mark other files for installation (e.g. launch and bag files, etc.)
-# install(FILES
-#   # myfile1
-#   # myfile2
-#   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
-# )
+install(FILES
+  launch/after_example_16_8.launch
+  launch/after_example_16_10.launch
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/launch
+)
+install(FILES
+  urdf/example_16_1.urdf
+  urdf/example_16_2.urdf
+  urdf/example_16_3.urdf
+  urdf/example_16_4.urdf
+  urdf/example_16_5.urdf
+  urdf/example_16_6.urdf
+  urdf/example_16_7.urdf
+  urdf/example_16_8.urdf
+  urdf/example_16_10.urdf
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/urdf
+)
 
 #############
 ## Testing ##

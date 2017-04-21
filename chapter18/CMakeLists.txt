@@ -161,11 +161,45 @@ catkin_package(
 # )
 
 ## Mark other files for installation (e.g. launch and bag files, etc.)
-# install(FILES
-#   # myfile1
-#   # myfile2
-#   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
-# )
+install(FILES
+  config/controllers.yaml
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/config
+)
+install(FILES
+  launch/after_example_18_15.launch
+  launch/after_example_18_16.launch
+  launch/all.launch
+  launch/cougarbot.launch
+  launch/example_18_11.launch
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/launch
+)
+install(FILES
+  moveit_examples/config/controller.yaml
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/moveit_examples/config
+)
+install(FILES
+  moveit_examples/launch/cougarbot_moveit_controller_manager.launch.xml
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/moveit_examples/launch
+)
+install(FILES
+  urdf/cougarbot.urdf
+  urdf/example_18_10.urdf
+  urdf/example_18_12.urdf
+  urdf/example_18_13.urdf
+  urdf/example_18_14.urdf
+  urdf/example_18_16.urdf
+  urdf/example_18_1.urdf
+  urdf/example_18_2.urdf
+  urdf/example_18_3.urdf
+  urdf/example_18_4.urdf
+  urdf/example_18_5.urdf
+  urdf/example_18_6.urdf
+  urdf/example_18_7.urdf
+  urdf/example_18_8.urdf
+  urdf/example_18_9.urdf
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/urdf
+)
+
 
 #############
 ## Testing ##

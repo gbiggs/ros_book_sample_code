@@ -151,10 +151,16 @@ include_directories(
 
 ## Mark executable scripts (Python etc.) for installation
 ## in contrast to setup.py, you can choose the destination
-# install(PROGRAMS
-#   scripts/my_python_script
-#   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
-# )
+install(PROGRAMS
+  src/actuator.py
+  src/fake_actuator.py
+  src/fake_sensor.py
+  src/service_sensor.py
+  src/topic_sensor.py
+  src/topic_sensor2.py
+  src/topic_sensor3.py
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
 
 ## Mark executables and/or libraries for installation
 # install(TARGETS chapter15 chapter15_node
