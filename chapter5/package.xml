@@ -22,7 +22,6 @@
   <!-- Example: -->
   <!-- <url type="website">http://wiki.ros.org/chapter5</url> -->
   <url type="website">http://shop.oreilly.com/product/0636920024736.do</url>
-  <url type="repository">https://github.com/gbiggs/ros_book_sample_code</url>
   <url type="repository">https://github.com/osrf/rosbook</url>
 
 
